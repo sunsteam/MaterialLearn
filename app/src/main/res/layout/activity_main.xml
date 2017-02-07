@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MainActivity"
+            android:gravity="center"
+            android:textSize="@dimen/sp_20"
+            android:textColor="@color/white"
+            />
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="这是Material Learn的主页面"
+        android:padding="@dimen/dp_16"/>
+
+    <Button
+        android:id="@+id/btn_to_vector"
+        style="@style/MaterialAnimations.Button"
+        android:text="VECTOR" />
+
+    <Button
+        android:id="@+id/btn_exit"
+        style="@style/MaterialAnimations.Button"
+        android:text="Exit" />
+
+</LinearLayout>
