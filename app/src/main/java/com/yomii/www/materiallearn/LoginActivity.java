@@ -47,7 +47,7 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world", "test@test.com:123456"
+            "foo@example.com:hello", "bar@example.com:world"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -67,8 +67,10 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
+        mEmailView.setText("foo@example.com");
 
         mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView.setText("hello");
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {

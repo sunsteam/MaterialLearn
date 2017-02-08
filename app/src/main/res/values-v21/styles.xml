@@ -6,10 +6,19 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <!-- 允许使用transitions -->
+        <!-- 启用transitions框架和管理器，TransitionManger会默认在再次setContentView时使用CrossFade效果，
+        但也兼容ActivityTransition -->
         <item name="android:windowContentTransitions">true</item>
+        <!-- 启用Transition框架,但没有界面content变化时的动画,
+        需要通过bundle设定动画，设定false则从ContentTransition中关闭此效果-->
+        <!--<item name="android:windowActivityTransitions">true</item>-->
         <!--是否覆盖在上层执行，允许与界面内容重叠-->
         <item name="android:windowAllowEnterTransitionOverlap">false</item>
         <item name="android:windowAllowReturnTransitionOverlap">false</item>
+
     </style>
+
+    <!--如果Theme直接继承自Material主题,那么`windowActivityTransitions`会默认开启而`windowContentTransitions`会默认关闭，
+    原因是自动的淡入淡出动画可能会对某些Application造成困扰，因此它是默认关着的，
+    但允许直接使用`ActivityOptions.makeSceneTransitionAnimation`通过bundle使用Transition。-->
 </resources>
